@@ -1,2 +1,2 @@
-# priximal_phishing
-priximal_phishing html or ino
+# ProximalPhishing
+ProximalPhishing html and ino
